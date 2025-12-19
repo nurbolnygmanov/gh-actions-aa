@@ -17,3 +17,5 @@ jobs:
           git checkout main
       - name: List files
         run: ls -a
+      - name: Run linter
+        run: pnpm run lint
