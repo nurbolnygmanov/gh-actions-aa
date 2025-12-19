@@ -1,0 +1,14 @@
+{
+  "name": "gh-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "node scripts/prepare.ts",
+    "lint": "node scripts/lint.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.13.1"
+}
