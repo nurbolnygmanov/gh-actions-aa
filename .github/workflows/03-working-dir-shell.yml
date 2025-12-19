@@ -1,0 +1,17 @@
+name: Working Dir & Shell
+
+on:
+  - workflow_dispatch
+
+jobs:
+  working-dir-shell:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display the working directory and list files
+        run: |
+          echo "::group::Working directory and list files"
+          echo "Working directory: $(pwd)"
+          ls -a
+          echo "::endgroup::"
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
