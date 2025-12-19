@@ -1,8 +1,7 @@
 name: 01-workflow
 
 on:
-  #manual trigger
-  workflow_dispatch:
+  - workflow_dispatch
 
 jobs:
   fake-job-name:
