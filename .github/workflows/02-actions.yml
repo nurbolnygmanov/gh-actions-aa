@@ -1,0 +1,11 @@
+name: 02-actions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  workflow-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setting an error message
+        run: echo "::error::This is an error message"
