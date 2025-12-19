@@ -17,5 +17,9 @@ jobs:
           git checkout main
       - name: List files
         run: ls -a
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.13.1
       - name: Run linter
         run: pnpm run lint
