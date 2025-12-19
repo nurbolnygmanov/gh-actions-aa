@@ -1,0 +1,23 @@
+name: 01-workflow
+
+on:
+  - push
+
+jobs:
+  fake-job-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log smth
+        run: |
+          echo "Hello, world!"
+          echo "Hello, world!"
+          echo "Hello, world!"
+  dependent-job:
+    needs: fake-job-name
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log smth
+        run: |
+          echo "Hello, world!"
+      - name: Erroring step
+        run: exit 0
