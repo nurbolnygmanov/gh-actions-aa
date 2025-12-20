@@ -1,0 +1,16 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tryRun:
+        description: "Try to run the release"
+        type: boolean
+        default: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log smth
+        run: echo "Release is ${{ github.event.inputs.tryRun }}"
