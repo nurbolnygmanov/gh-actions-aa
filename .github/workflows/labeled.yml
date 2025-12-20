@@ -1,0 +1,14 @@
+name: Labeled
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  labeled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log label
+        run: echo Label is ${{ github.event.label.name }}
+      - name: Log pr label
+        run: echo PR Label is ${{ github.event.pull_request.labels.*.name }}
