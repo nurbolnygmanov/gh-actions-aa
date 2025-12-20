@@ -1,0 +1,14 @@
+name: Branching
+
+on:
+  push:
+    branches:
+      - main
+      - feature/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log smth
+        run: echo "Branch is ${{ github.ref }}"
