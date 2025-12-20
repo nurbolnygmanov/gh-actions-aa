@@ -13,4 +13,4 @@ jobs:
     steps:
       - run: |
           echo Label is ${{ github.event.label.name }}
-          echo PR Label is ${{ github.event.pull_request.labels.*.name }}
+          echo PR Label is ${{ github.event.pull_request.labels.* }}
