@@ -1,9 +1,11 @@
 name: Repo events
 
 on:
-  - push
-  - pull_request
-  - issues
+  push:
+  pull_request:
+    types: [labeled]
+  issues:
+    types: [opened]
 
 jobs:
   checkout-test:
