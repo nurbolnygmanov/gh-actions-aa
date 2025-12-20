@@ -12,6 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo $GITHUB_SHA
-          echo $GITHUB_REF
-      - uses: actions/checkout@v4
+          echo Label is ${{ github.event.label.name }}
+          echo PR Label is ${{ github.event.pull_request.labels.*.name }}
