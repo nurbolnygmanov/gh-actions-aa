@@ -1,7 +1,7 @@
 name: Manual Checkout
 
 on:
-  - push
+  - workflow_dispatch
 
 jobs:
   checkout:
