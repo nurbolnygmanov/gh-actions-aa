@@ -1,0 +1,13 @@
+name: Level Vars
+
+on:
+  - push
+
+jobs:
+  level-vars:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log level vars
+        run: |
+          echo "ENV_LEVEL_VAR: $ENV_LEVEL_VAR"
+          echo "REPO_LEVEL_VAR: $REPO_LEVEL_VAR"
