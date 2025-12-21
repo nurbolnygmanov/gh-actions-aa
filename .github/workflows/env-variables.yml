@@ -27,3 +27,22 @@ jobs:
       - name: Log env variables 2
         run: |
           echo "FOO: $FOO"
+      - name: Set env var
+        run: |
+          echo "NEW_ENV_VAR=$(date)" >> "$GITHUB_ENV"
+
+  env-variables-3:
+    runs-on: ubuntu-latest
+    needs: env-variables-2
+    steps:
+      - name: Log env variables 3
+        run: |
+          echo "NEW_ENV_VAR: $NEW_ENV_VAR"
+
+  env-variables-4:
+    runs-on: ubuntu-latest
+    needs: env-variables-3
+    steps:
+      - name: Log env variables 4
+        run: |
+          echo "NEW_ENV_VAR: $NEW_ENV_VAR"
