@@ -29,7 +29,7 @@ jobs:
           echo "FOO: $FOO"
       - name: Set env var
         run: |
-          echo "NEW_ENV_VAR=$(date)" >> "$GITHUB_ENV"
+          echo "NEW_ENV_VAR=$(date +'%Y-%m-%d %H:%M:%S')" >> "$GITHUB_ENV"
 
   env-variables-3:
     runs-on: ubuntu-latest
