@@ -16,14 +16,6 @@ jobs:
         run: |
           echo $(( 1 + 1 ))
           echo ${{ 1 > 2 }}
-      - name: Dump context
-        run: |
-          echo github ${{ toJson(github) }}
-          echo job ${{ toJson(job)}}
-          echo runner ${{ toJson(runner)}}
-          echo steps ${{ toJson(steps)}}
-          echo strategy ${{ toJson(strategy)}}
-          echo matrix ${{ toJson(matrix)}}
-          echo env ${{ toJson(env)}}
-          echo secrets ${{ toJson(secrets)}}
-          echo inputs ${{ toJson(inputs)}}
+      - name: Conditional step
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: echo ${{ github.event_name }}
