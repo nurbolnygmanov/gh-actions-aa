@@ -17,5 +17,5 @@ jobs:
           echo $(( 1 + 1 ))
           echo ${{ 1 > 2 }}
       - name: Conditional step
-        if: ${{ github.event_name == 'workflow_dispatch' }}
-        run: echo ${{ github.event_name }}
+        if: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'bug') }}
+        run: echo names are - ${{toJson(github.event.pull_request.labels.*.name)}}
