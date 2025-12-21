@@ -1,0 +1,28 @@
+name: Expressions
+
+on:
+  - push
+  - pull_request
+  - issues
+  - workflow_dispatch
+
+jobs:
+  expressions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Expressions
+        id: expressions
+        run: |
+          echo $(( 1 + 1 ))
+          echo ${{ 1 > 2 }}
+      - name: Dump context
+        run: |
+          echo ${{ toJson(github) }}
+          echo ${{ toJson(job)}}
+          echo ${{ toJson(runner)}}
+          echo ${{ toJson(steps)}}
+          echo ${{ toJson(strategy)}}
+          echo ${{ toJson(matrix)}}
+          echo ${{ toJson(env)}}
+          echo ${{ toJson(secrets)}}
+          echo ${{ toJson(inputs)}}
