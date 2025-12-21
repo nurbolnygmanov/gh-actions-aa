@@ -1,13 +1,22 @@
 name: Level Vars
 
 on:
-  - push
+  workflow_dispatch:
+    inputs:
+      target_env:
+        description: "Environment variable"
+        type: choice
+        options:
+          - prod
+          - stage
 
 jobs:
   level-vars:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.target_env }}
     steps:
       - name: Log level vars
         run: |
           echo "ENV_LEVEL_VAR: ${{ vars.ENV_LEVEL_VAR }}"
           echo "REPO_LEVEL_VAR: ${{ vars.REPO_LEVEL_VAR }}"
+          echo "BOOLEAN_SECRET: ${{ secrets.BOOLEAN_SECRET }}"
