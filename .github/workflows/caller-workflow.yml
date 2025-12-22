@@ -18,4 +18,4 @@ jobs:
     needs: call-reusable
     steps:
       - run: |
-          echo "Greeting: ${{ needs.call-reusable.outputs.greeting }}"
+          echo "Greeting from outputs: ${{ needs.call-reusable.outputs.greeting }}"
