@@ -17,7 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       greeting:
-        description: "Greeting message"
         value: ${{ steps.set-output.outputs.greeting }}
     steps:
       - name: Set output
