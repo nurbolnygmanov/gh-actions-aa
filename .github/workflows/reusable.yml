@@ -16,8 +16,8 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     outputs:
-      greeting:
-        value: ${{ steps.set-output.outputs.greeting }}
+      # This line must be a direct key-value pair
+      greeting: ${{ steps.set-output.outputs.greeting }}
     steps:
       - name: Set output
         id: set-output
