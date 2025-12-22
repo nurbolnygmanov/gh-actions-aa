@@ -10,7 +10,7 @@ on:
     outputs:
       greeting:
         description: "Greeting message"
-        value: ${{ steps.set-output.outputs.greeting }}
+        value: ${{ jobs.greet.outputs.greeting }}
 
 jobs:
   greet:
@@ -22,4 +22,4 @@ jobs:
     steps:
       - name: Set output
         id: set-output
-      - run: echo "greeting=Hello, ${{ inputs.name }}!" >> $GITHUB_OUTPUT
+        run: echo "greeting=Hello, ${{ inputs.name }}!" >> $GITHUB_OUTPUT
