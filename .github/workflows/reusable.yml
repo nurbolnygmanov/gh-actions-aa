@@ -7,9 +7,19 @@ on:
         description: "Name to greet"
         type: string
         required: true
+    outputs:
+      greeting:
+        description: "Greeting message"
+        value: ${{ steps.set-output.outputs.greeting }}
 
 jobs:
   greet:
     runs-on: ubuntu-latest
+    outputs:
+      greeting:
+        description: "Greeting message"
+        value: ${{ steps.set-output.outputs.greeting }}
     steps:
-      - run: echo "Hello, ${{ inputs.name }}!"
+      - name: Set output
+        id: set-output
+      - run: echo "greeting=Hello, ${{ inputs.name }}!" >> $GITHUB_OUTPUT
