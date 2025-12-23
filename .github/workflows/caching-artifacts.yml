@@ -22,7 +22,7 @@ jobs:
           restore-keys: |
             npm-cache-
       - name: Display cache output
-        run: echo ${{ toJson(steps.cache-deps.outputs) }}
+        run: echo '${{ toJson(steps.cache-deps.outputs) }}'
       - name: Install dependencies
         run: npm install
       - name: Run tests
